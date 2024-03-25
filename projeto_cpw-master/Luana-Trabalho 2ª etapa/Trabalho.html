@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>CPW- Modelo de Site</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="novoestilo.css" />
+    <script src="jquery.mask.min.js"></script>
+    <script src="./mine.js" defer></script>
+
+
+</head>
+
+<body>
+
+    <div class="topo">
+        <h2 style="text-align: center;">Site Luana Silveira</h2>
+
+        <div>
+            <ul class="menu">
+                <li class="active"><a data-toggle="pill" href="#home">Inicio</a></li>
+                <li><a data-toggle="pill" href="#menu1">Biblioteca</a></li>
+                <li><a data-toggle="pill" href="#menu2">Exemplos</a></li>
+                <li><a data-toggle="pill" href="#menu3">Contato</a></li>
+                <li><a data-toggle="pill" href="#menu4">Referências</a></li>
+
+            </ul>
+        </div>
+        <div class="col-xs-9">
+
+            <div class="tab-content" id="app">
+
+
+                <div id="home" class="tab-pane fade in active">
+                    <div class="img">
+                        <img src="img-removebg-preview.png" width="50%" />
+                    </div>
+
+                    <ul class="dados">
+                        <li>Instituto Federal Sul-Rio-Grandense</li>
+                        <li> Ciência da Computação</li>
+                        <li> Passo Fundo - RS – Brasil</li>
+                        <li>Disciplina: Criação de Páginas Web</li>
+                        <li>Professor: Telmo de Cesaro Junior</li>
+                        <li>Luana Figueredo Silveira</li>
+                        <li>luanasilveira.pf029@academico.ifsul.edu.br</li>
+                    </ul>
+                </div>
+
+
+                <div id="menu1" class="tab-pane fade">
+                    <h3>JQuery</h3>
+                    <div class="paragrafo">
+                        <p> É uma Biblioteca do JavaScript, criada para simplificar os códigos para o desenvolvedor.
+                            Ele é destinado para adicionar dinamismo e interatividade as páginas web, proporcionando
+                            ao
+                            desenvolvedor funcionalidades necessárias a criação de scripts que visem a incrementar,
+                            de
+                            forma progressiva e não obstrutiva, a usabilidade, a acessibilidade e o design,
+                            enriquecendo
+                            a experiência do usuário.</p>
+                        <p> Para utilizar essa biblioteca é necessário ter conhecimento na sintaxe básica do
+                            JavaScript, entendimento em HTML e CSS. jQuery é uma biblioteca JavaScript criada por John
+                            Resig, de código aberto, liberada sob a licença GPL (General Public Licence), o que
+                            significa que você pode usar a biblioteca gratuitamente tanto em desenvolvimento de projetos
+                            pessoais como comerciais. A
+                            sintaxe do jQuery foi desenvolvida para tornar mais simples a navegação do documento
+                            HTML, a seleção de elementos DOM, criar animações, manipular eventos e desenvolver
+                            aplicações AJAX. E principalmente possibilitar um Design Responsivo de alta performance.
+                        </p>
+                        <p> As principais funcionalidades dessa biblioteca são:</p>
+                        <ul type="square">
+                            <li>Adicionar efeitos visuais e animações;</li>
+                            <li>Acessar e manipular o DOM ( Document Object Model);</li>
+                            <li>Buscar informações no servidor sem necessidade de recarregar a página;</li>
+                            <li>Prover interatividade;</li>
+                            <li>Alterar conteúdos;</li>
+                            <li>Modificar apresentação e estilização;</li>
+                            <li>Simplificar tarefas específicas de JavaScript;</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div id="menu2" class="tab-pane fade">
+                    <h3>Exemplos usando o JQuery</h3>
+                    <div class="paragrafo">
+                        <div id="conteudo"></div>
+                        <hr> Digite aqui para mudar o texto acima:
+                        <input type="text" id="novo">
+                        <button id="alterar">Alterar</button>
+                        <div class="formcontrol">
+                            <p>Clique sobre a imagem</p>
+                            <img id="farol" src="farol.jpeg" height="200px">
+                        </div>
+                    </div>
+
+                    <script>
+                        $('#conteudo').text("Olá, esse é um exemplo qualquer.");//conteudo que vai ser modificado
+//$('')serve para localizar o elemento   e o text insere o texto nesse elemento
+                        $("#alterar").click(function () { //apaga o conteudo que está na caixa de texto após o click
+                            var digitado = $('#novo').val();//val pega o valor que está no texto
+                            //colocar esse novo texto na div
+                            $('#conteudo').text(digitado);//localiza o elemento e coloca um novo texto
+                        });
+                        //quando clicar na imagem
+                        $("#farol").click(function () {
+                            //some a imagem
+                            $(this).fadeOut(2500);
+                            //this significa quem foi clicado,ou seja, a imagem.é um localizador
+                        })
+                    </script>
+
+                    <div class="paragrafo">
+                        Clique para mover a caixa: <button id="btnanimar">Animar</button>
+                        <div class="formcontrol">
+                            <div id="caixa" class="caixa"></div>
+                        </div>
+                    </div>
+                    <script>
+                        $('#btnanimar').click(function () {
+                            $('#caixa').animate({ left: 800 }, { duration: 2000 })
+                            $('#caixa').animate({ top: 50 }, { duration: 2000 })
+                            $('#caixa').animate({ top: 400 }, { duration: 2000 })
+                            $('#caixa').animate({ left: 10 }, { duration: 2000 })
+                        })
+                    </script>
+
+                </div>
+
+                <div id="menu3" class="tab-pane fade">
+
+                    <div class="form">
+                        <h3>Dados para Contato</h3>
+                        <form class="formulario" id="formulario">
+                            <div class="formcontrol ">
+                                <input type="text" id="username" name="name" minlength="3" maxlength="25"
+                                    placeholder="Nome" size="50px">
+                                <small>Erro ao enviar</small>
+                            </div>
+                            <div class="formcontrol ">
+                                <input type="text" id="tel" name="tel" minlength="14" maxlength="14"
+                                    placeholder="Telefone" size="50px">
+                                <small>Erro ao enviar</small>
+                            </div>
+
+                            <div class="formcontrol">
+                                <input type="text" autocomplete="off" minlength="14" maxlength="14" id="idcpf"
+                                    size="50px" name="cpf" placeholder="CPF">
+                                <small>Erro ao enviar</small>
+
+                            </div>
+
+                            <div class="formcontrol">
+                                <input type="text" id="endereco" name="endereco" minlength="4" placeholder="Endereço"
+                                    size="50px">
+                                <small>Erro ao enviar</small>
+                            </div>
+
+                            <div class="formcontrol">
+                                <input type="email" id="email" name="email" placeholder="E-mail" size="50px">
+                                <small>Erro ao enviar</small>
+                            </div>
+
+                            <div class="formcontrol">
+
+                                <textarea maxlength="100" name="msg" id="msg" cols="52" rows="5"
+                                    placeholder="Deixe seu comentário aqui..."></textarea>
+                                <small>Erro ao enviar</small>
+                                <div class="result">Máximo de caracteres:100</div>
+
+                            </div>
+                            <div class="formcontrol">
+                                <button type="submit" value="Salvar"  id="btnSalvar" >Enviar</button>
+                            </div>
+                           
+                    </div>
+                    </form>
+
+                </div>
+
+                <div id="menu4" class="tab-pane fade">
+                    <h3>Referências</h3>
+                    <p>ALÉM DO CÓDIGO. Como fazer VALIDAÇÃO DE FORMULÁRIO com Javascript | Validação Formulário
+                        Javascript. Disponível em:<a href="https://www.youtube.com/watch?v=SazrvkE7t-g"> https://www.youtube.com/watch?v=SazrvkE7t-g</a>. Youtube, 11 de dezembro
+                        de 2021. Acesso em: 16 de novembro de
+                        2022.</p>
+
+                    <p>2 GUARINOS. HTML5-CSS-JavaScript - JQuery Mask com CPF, CNPJ, RG, Celular de 9 Dígitos e mais
+                        exemplos. Disponível em: <a href="https://www.youtube.com/watch?v=KNYQzoMLJ5M">https://www.youtube.com/watch?v=KNYQzoMLJ5M</a>. Youtube, 08 de abril de
+                        2018. Acesso em: 16 de novembro de 2022.</p>
+
+                    <p>HORA DE CODAR. Como não permitir números em um input com JavaScript. Youtube, 10 de
+                        fevereir de 2021. Disponível em: <a href="https://youtu.be/xPWS3tFM1ls">https://youtu.be/xPWS3tFM1ls</a>. Acesso em: 16 de novembro de
+                        2022. </p>
+
+                    <p>HYLSON VESCOVI NETTO. Javascript e jquery - exemplos iniciais. Youtube, 22 de maio de 2021.
+                        Disponível em: <a href="https://www.youtube.com/watch?v=3Cv1BuDju6s">https://www.youtube.com/watch?v=3Cv1BuDju6s</a>. Acesso em: 16 de novembro de
+                        2022.</p>
+
+                    <p> MATHEUS, Diogo. Introdução ao jQuery. Publicado em: 13 de maio de 2010. Disponível em:
+                        <a href="http://www.diogomatheus.com.br/blog/jquery/introducao-ao-jquery/">http://www.diogomatheus.com.br/blog/jquery/introducao-ao-jquery/</a>. Acesso em: 16 de novembro de
+                        2022.</p>
+
+                    <p>QUEBRANDO O CÓDIGO. Criando máscara de CPF com HTML e JavaScript puro. Youtube, 9 de novembro de
+                        2021. Disponível em:<a href="https://www.youtube.com/watch?v=3bGQ7s0mnHY"> https://www.youtube.com/watch?v=3bGQ7s0mnHY</a>. Acesso em: 16 de novembro de
+                        2022. </p>
+
+                    <p>SILVA, Mauricio Samy. jQuery: a biblioteca do programador JavaScript. 2. ed. São Paulo: Novatec
+                        Editora, 2010.</p>
+
+                    <p>WEBDESIGN EM FOCO. Exercício de Programação #05 - JS - Contagem e Limite de Caracteres. Youtube,
+                        21 de novembro de 2020. Disponível em:<a href="https://www.youtube.com/watch?v=LiQcxaC2Ek4"> https://www.youtube.com/watch?v=LiQcxaC2Ek4</a>. Acesso em:
+                        16 de novembro de 2022.</p>
+
+                    
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+    </div>
+
+    </div>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,194 @@
+<html>
+<!--
+        Com base no exemplo index24.html, implemente uma alteração na rotina para que a tabela seja atualizada após o cadastro,
+        sem a necessidade de clique no botão atualizar (já que esse botão pode ser mesclado ao botão de cadastrar).
+    -->
+
+</html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Table, funções, json e Array - 24º Exemplo</title>
+    <script src="../topico_4/js/jquery-3.5.1.min.js"></script>
+    <style>
+        .centro {
+            margin-top: 5%;
+            margin-left: 30%;
+            margin-right: 20%;
+        }
+
+        .formcontrol {
+            margin: 5px;
+
+        }
+
+        .alinhamento {
+            width: 30%;
+            float: left;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="centro">
+
+        <table id="tabelaAlunos" border="1">
+            <tr>
+                <th scope="col">Código</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Curso</th>
+                <th scope="col">Data Nascimento</th>
+                
+            </tr>
+            <tbody id="corpoTabela">
+
+            </tbody>
+
+        </table>
+
+    </div>
+    <div class="centro">
+
+        <div class="formcontrol">
+            <div class="alinhamento">
+                <label for="inputCodigo">Código:</label>
+            </div>
+            <input type="number" id="inputCodigo">
+        </div>
+
+        <div class="formcontrol">
+            <div class="alinhamento">
+                <label for="inputNome">Nome:</label>
+            </div>
+            <input type="text" id="inputNome">
+        </div>
+
+        <div class="formcontrol">
+            <div class="alinhamento">
+                <label for="inputDTNasc">Data Nascimento:</label>
+            </div>
+            <input type="date" id="inputDTNasc">
+        </div>
+
+        <div class="formcontrol">
+            <div class="alinhamento">
+                <label for="selectCurso">Curso:</label>
+            </div>
+            <select id="selectCurso" name="curso">
+                <option selected>Selecione</option>
+                <option>Ciência da Computação</option>
+                <option>Ciências Biológicas</option>
+            </select>
+        </div>
+        <div class="formcontrol">
+            <div class="alinhamento">
+                <label for="inputpeso">Peso:</label>
+            </div>
+            <input type="number" id="inputpeso">
+        </div>
+
+        <div class="formcontrol">
+            <div class="alinhamento">
+                <label for="inputidade">Idade</label>
+            </div>
+            <input type="number" id="inputidade">
+        </div>
+        //esses inputs criei pra fazer um teste mas se retiro eles o botão não funciona entao deixei aqui 
+        <div class="formcontrol">
+            <input type="button" id="btnCadastrar" value="Cadastrar">
+        </div>
+
+    </div>
+
+</body>
+<script type="text/javascript">
+
+    var dados = [];
+
+    function limpaTabela() {//remove as linhas
+
+        var tabela = document.getElementById("tabelaAlunos");
+        var qtd_rows = tabela.rows.length;
+
+        for (var i = 1; i < qtd_rows; i++) {
+
+            tabela.deleteRow(1);
+
+        }
+
+    }
+
+
+    function populaTabela() {//recria as linhas com base na quantidade de linhas do vetor dados
+
+        var tabela = document.getElementById("tabelaAlunos");
+
+        for (var i = 0; i < dados.length; i++) {
+
+            var linha = tabela.insertRow(tabela.rows.length);
+
+
+            var celula0 = linha.insertCell(0);
+            celula0.innerHTML = dados[i].codigo;
+
+            var celula1 = linha.insertCell(1);
+            celula1.innerHTML = dados[i].nome;
+
+            var celula3 = linha.insertCell(2);
+            celula3.innerHTML = dados[i].curso;
+
+            var celula2 = linha.insertCell(3);
+            celula2.innerHTML = dados[i].datanascimento;
+
+          
+
+
+        }
+
+    }
+
+    function resetFormulario() {
+
+        document.getElementById("inputCodigo").value = "";
+        document.getElementById("inputNome").value = "";
+        document.getElementById("inputDTNasc").value = "";
+        document.getElementById("selectCurso").value = "Selecione";
+        
+    }
+
+    //Jquery permite para executar uma function após o click em um botão:
+    $("#btnCadastrar").click(function () {
+
+        //documentação sobre o método getElementById: https://www.w3schools.com/jsref/met_document_getelementbyid.asp
+
+        var aluno = {
+            "codigo": document.getElementById("inputCodigo").value,
+            "nome": document.getElementById("inputNome").value,
+            "datanascimento": document.getElementById("inputDTNasc").value,
+            "curso": document.getElementById("selectCurso").value,
+            "peso":document.getElementById("inputpeso").value,
+            "idade":document.getElementById("inputidade").value
+        };//objeto com 4 atributos
+
+        // metodo push: adiciona um elemento no final do vetor.
+        dados.push(aluno);
+
+        resetFormulario();//chamada da funcao.
+
+   
+
+limpaTabela();//chama a funcao limpaTabela()
+
+populaTabela();//chama a funcao populaTabela()
+
+});
+
+    
+
+
+
+</script>
+
+</html>

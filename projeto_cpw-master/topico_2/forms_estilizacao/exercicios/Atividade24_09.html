@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+    <meta charset="UTF-8">
+<head>
+   
+    <title>Atividade 24/09/2022</title>
+    <style>
+        .login {
+            width: 100vw;
+            height: 100vh;
+            background: #6C7A89;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+
+
+        }
+
+        .box {
+            width: 200px;
+            height: 300px;
+            background: rgb(234, 237, 235);
+
+            margin: 30px;
+
+            border: 4px;
+            border-style: outset;
+            border-color: rgb(60, 216, 138);
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            border-radius: 15px;
+
+        }
+
+        body {
+            margin: 0px;
+        }
+
+
+
+        .input {
+            padding: 15px;
+            border: none;
+            outline: none;
+            font-size: 15px;
+        }
+
+        .card {
+            margin-left: 50px;
+            height: 50px;
+            width: 200px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login">
+
+        <div class="box">
+            <form class="card">
+                <h2> Login</h2> </form>
+
+                <input type="e-mail" placeholder="E-mail">
+                <br><br>
+                <input type="password" placeholder="Senha">
+                <br><br>
+
+                <button type="button" onclick="Evento()">Acessar</button>
+                <button type="reset" >Limpar</button>
+            </form>
+            </div>
+        </div>
+
+        <script>
+            function Evento() {
+                alert('Acesso permitido')
+            }
+        </script>
+
+    </div>
+    </div>
+</body>
+
+</html>

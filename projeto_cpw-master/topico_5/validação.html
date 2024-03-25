@@ -1,0 +1,130 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Exemplo</title>
+    <script src="../topico_4/js/jquery-3.5.1.min.js"></script>
+    <style>
+        .centro {
+            margin-top: 5%;
+            margin-left: 30%;
+            margin-right: 20%;
+        }
+
+        .formcontrol {
+            margin: 5px;
+
+        }
+
+        .alinhamento {
+            width: 30%;
+            float: left;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="centro">
+
+        <div class="formcontrol">
+            <div class="alinhamento">
+                <label for="inputCodigo">Código:</label>
+            </div>
+            <input type="number" id="inputCodigo" step="0.1">
+        </div>
+
+        <div class="formcontrol">
+            <div class="alinhamento">
+                <label for="inputNome">Nome:</label>
+            </div>
+            <input type="text" id="inputNome">
+        </div>
+
+        <div class="formcontrol">
+            <div class="alinhamento">
+                <label for="inputDTNasc">Data Nascimento:</label>
+            </div>
+            <input type="date" id="inputDTNasc">
+        </div>
+
+        <div class="formcontrol">
+            <div class="alinhamento">
+                <label for="selectCurso">Curso:</label>
+            </div>
+            <select id="selectCurso" name="curso">
+                <option selected>Selecione</option>
+                <option>Ciência da Computação</option>
+                <option>Ciências Biológicas</option>
+            </select>
+        </div>
+        <div class="formcontrol">
+            <div class="alinhamento">
+                <label for="idResultado">Soma:</label>
+            </div>
+            <div>
+                <input type="text" id="idResultado" name="resultado">
+            </div>
+        </div>
+
+        <div class="formcontrol">
+            <input type="button" id="btnCadastrar" value="Cadastrar">
+        </div>
+
+    </div>
+</body>
+<script type="text/javascript">
+    $("#btnCadastrar").click(function () {
+        var dt_input = document.getElementById("inputDTNasc").value;
+        var data_usuário = new Date(dt_input);
+        var data_atual = new Date();
+        if (document.getElementById("inputCodigo").value > 0 &&
+            data_atual.getTime() != data_usuário.getTime() &&
+            document.getElementById("inputNome").value.trim().length > 0 &&
+            document.getElementById("selectCurso").value != "Selecione") {
+
+     
+                alert('OK!')
+            
+        }
+        else {
+            alert('PREENCHA O FORMULÁRIO com a data certa!')
+        }
+    })
+    $(document).ready(function () {
+        var n1, n2, soma;
+        n1 = prompt("Digite o primeiro número inteiro")
+        n2 = prompt("Digite o segundo número inteiro")
+
+        soma = parseInt(n1) + parseInt(n2);
+
+        document.getElementById('idResultado').value = soma;
+        document.getElementById('idResultado').innerHTML
+
+
+    })
+</script>
+var dt_input = document.getElementById("idData").value;
+
+// cria uma variável do tipo Date com a data fornecida
+var data_formulario = new Date(dt_input);
+var data_atual = new Date(); // recupera a data atual.
+
+
+//compara as datas (fornecida e atual)
+if (data_atual.getTime()>= data_formulario.getTime() || dt_input==" ") {
+    alert("válida");
+}
+
+else {
+    alert("Invalida");
+}
+
+var local= document.getElementById("idCidade").value;
+if(local!= "Selecione") 
+{
+    alert("Cidade valida")
+}
+else{
+    alert("Selecione a cidade")
+}

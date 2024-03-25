@@ -1,0 +1,88 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Manipulando Vetores e table - 22º Exemplo</title>
+        <script src="../topico_4/js/jquery-3.5.1.min.js"></script>
+        <style>
+            .centro{
+                margin-top: 5%;
+                margin-left:  30%;
+                margin-right: 20%;
+            }    
+            .formcontrol{
+               margin: 5px;
+               
+            }
+
+            .alinhamento{
+                width: 30%;
+                float: left;
+            }
+
+
+        </style>
+
+    </head>
+    <body>
+        <div class="centro">
+
+            <table id="tabelaAlunos" border="1">
+                <tr>
+                    <th scope="col">Código</th>
+                    <th scope="col">Nome</th>        
+                    <th scope="col">Endereço</th>
+                    <th scope="col">Telefone</th>   
+                    <th scope="col">Peso</th>
+                    <th scope="col">Idade</th>                
+                </tr> 
+                <tbody id="corpoTabela">                  
+                </tbody>
+
+            </table>
+
+        </div>       
+
+    </body>
+    <script type="text/javascript">
+
+        //Jquery permite para executar uma function após o click em um botão:
+        $(document).ready(function() {
+
+            var dados = [ {codigo: 1, nome: "Telmo", endereco: "", tel: "", peso: "", idade:" "}, //nome do atributo: valor...
+                          {codigo: 2, nome: "Fernanda", endereco: "", tel: "", peso: "", idade:" "},
+                          {codigo: 3, nome: "Fulano", endereco: "", tel: "", peso: "", idade:" "},
+                          {codigo: 4, nome: "Ciglano", endereco: "", tel: "", peso: "", idade:" "}
+                        ];
+            //incluir dois objetos na variavel dados 
+            // incluir mais dois atributos em cada elemento da dados.
+            // imprimir na tabela os 4 valores de atributos de cada elemento
+            var tabela = document.getElementById("tabelaAlunos");
+
+            for(var i=0; i < dados.length; i++){
+                var linha = tabela.insertRow(tabela.rows.length);//cria uma linha na tabela 
+                var celula0 = linha.insertCell(0);//cria uma celula na linnha
+                celula0.innerHTML = dados[i].codigo;
+
+                var celula1 = linha.insertCell(1); //(1) representa o indice da coluna
+                celula1.innerHTML = dados[i].nome;
+
+                var celula2 = linha.insertCell(2); 
+                celula2.innerHTML = dados[i].endereco;
+
+                var celula3 = linha.insertCell(3); 
+                celula3.innerHTML = dados[i].tel;
+
+                var celula4 = linha.insertCell(4); 
+                celula3.innerHTML = dados[i].peso;
+
+                var celula5 = linha.insertCell(5); 
+                celula3.innerHTML = dados[i].idade;
+            
+            }                    
+        });
+
+        
+
+    </script>
+
+</html>  

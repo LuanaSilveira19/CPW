@@ -1,0 +1,100 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Manipulando Vetores - 20º Exemplo</title>
+        <script src="../topico_4/js/jquery-3.5.1.min.js"></script>
+        <style>
+            .centro{
+                margin-top: 5%;
+                margin-left:  30%;
+                margin-right: 20%;
+            }    
+            .formcontrol{
+               margin: 5px;
+               
+            }
+
+            .alinhamento{
+                width: 30%;
+                float: left;
+            }
+
+
+        </style>
+
+    </head>
+    <body>
+        <div class="centro">          
+            <label for="inputResultado">Resultado-1:</label>
+            <input type="text" id="inputResultado" value="">            
+        </div>
+        <div class="centro">          
+            <label for="inputResultado2">Resultado-2:</label>
+            <input type="text" id="inputResultado2" value="">            
+        </div>
+        <div class="centro">
+          
+            <textarea id="txaPAR" cols="10" rows="20"></textarea>
+
+        </div>   
+
+
+    </body>
+    <script type="text/javascript">
+
+        //Jquery permite para executar uma function após o click em um botão:
+        $(document).ready(function() {
+
+            var dados1 = [];
+            var par = [];    
+            var impar = [];          
+
+            for(var i=0; i < 10; i++){
+                        
+                dados1[i] = prompt("Digite um valor inteiro:");
+            }
+            
+            var soma1 = 0;
+            var soma2 = 0;
+            
+            for(var i=0; i < 5; i++){
+                        
+                soma1 = soma1 + parseInt(dados1[i]);//perseInt só aceita valores inteiros
+                if(dados1[i] %2==0){
+                    par++;
+                }
+                else{
+                    impar++;
+                }
+            }
+            for(var i=5; i < 10; i++){
+                        
+                        soma2 = soma2 + parseInt(dados1[i]);//perseInt só aceita valores inteiros
+                        if(dados1[i] %2==0){
+                    par++;
+                }
+                else{
+                    impar++;
+                }
+                    }
+            
+
+            var input = document.getElementById("inputResultado");//esse input é o input text que tem em cima
+            input.value = soma1;
+
+            var input = document.getElementById("inputResultado2");//esse input é o input text que tem em cima
+            input.value = soma2;
+
+            for(var i=0; i < par.length; i++){//length retorna a um inteiro referente ao temanho do vetor,
+            
+            textarea.value = textarea.value + par+ "\n";  // o + faz uma concatenação               
+        
+        }    
+
+        });
+
+        
+
+    </script>
+
+</html>  

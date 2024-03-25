@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScript para datas - 11º Exemplo</title>
+        <script>
+            //https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Date
+            //https://www.w3schools.com/js/js_date_methods.asp
+            //recupera a data atual do Computador
+            //documentação sobre a classe Date : https://www.w3schools.com/jsref/jsref_obj_date.asp
+            
+            //criacao/declaracao da variavel data_atual
+            //essa variavel é inicalizada com uma instancia
+            //da classe Date
+            //essa instância conterá a data atual.
+            var data_atual = new Date();
+
+            var hora_formatada = data_atual.getHours() +
+                                 " - " + 
+                                 data_atual.getMinutes()+ 
+                                 " - " + 
+                                 data_atual.getSeconds();                   
+            var v1 = 15;
+            var v2 = 16;
+            var v3 = v1 + " " + v2;
+        </script>
+    </head>
+    <body>
+        <p>            
+            Impressão do conteúdo da variavel hora_formatada:
+            <script>document.write(hora_formatada)</script>
+        </p>
+        <p>            
+            Impressão do conteúdo da variavel v3:
+            <script>document.write(v3)</script>
+        </p>
+
+        <h1>Exercícios anteriores:</h1>
+
+
+        <p> 
+            Questao 1: imprimir aqui o dia do mês atual.
+           <html>
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScript para datas - 11º Exemplo</title>
+        <script>
+            //https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Date
+            //https://www.w3schools.com/js/js_date_methods.asp
+            //recupera a data atual do Computador
+            //documentação sobre a classe Date : https://www.w3schools.com/jsref/jsref_obj_date.asp
+            
+            //criacao/declaracao da variavel data_atual
+            //essa variavel é inicalizada com uma instancia
+            //da classe Date
+            //essa instância conterá a data atual.
+            var data_atual = new Date();
+
+            var hora_formatada = data_atual.getHours() + //retorna o valor das horas 24.
+                                 " - " + 
+                                 data_atual.getMinutes()+ //traz os minutos informados
+                                 " - " + 
+                                 data_atual.getSeconds()+ // informa os segundos  
+                                 " - " + 
+                                 data_atual.getFullYear() +   //2022  
+                                 " - " +
+                                 data_atual.getMonth() + //mês
+                                 " - " +
+                                 data_atual.getDate();  //dia        
+            var v1 = 15;
+            var v2 = 16;
+            var v3 = v1 + " " + v2;
+            var date = new Date();
+           
+        </script>
+    </head>
+    <body>
+        <p>            
+            Impressão do conteúdo da variavel hora_formatada:
+            <script>document.write(hora_formatada)</script>
+        </p>
+        <p>            
+            Impressão do conteúdo da variavel v3:
+            <script>document.write(v3)</script>
+        </p>
+
+        <h1>Exercícios anteriores:</h1>
+
+
+        <p> 
+            Questao 1: imprimir aqui o dia do mês atual.
+            <script>document.write(data_atual.getDate())</script>
+        </p>
+
+        <p> 
+            Questao 2: imprimir aqui o mês do ano atual.
+            <script>document.write(data_atual.getMonth() + 1)</script>
+        </p>
+
+        <p> 
+            Questao 3: imprimir aqui dia e mês atual, 10/06 ou 10 de junho:
+            <script>document.write(data_atual.getDate() + "/" +
+                                   (data_atual.getMonth() + 1) )</script>
+        </p>
+
+        <p> 
+            Questao 4: imprimir aqui hora e minuto atual. ex: 09:26:
+            <script>document.write(data_atual.getHours() + ":" +
+                                    data_atual.getMinutes() )</script>
+        </p>
+
+
+        <p> 
+            Data atual (estática): 08/06/2022
+        </p>
+
+        <p>
+            <script>document.write(data_atual)</script>
+        </p>
+
+        <p>
+            <script>document.write(hora_formatada)</script>
+        </p>
+
+        <h1>Exercícios posteriores:</h1>
+
+        <ul>
+
+            <li>Hora atual no formato 24 horas:
+                <span style="color: green;"><script>document.write(data_atual.getHours())</script></span>
+            </li>
+            <li>Hora atual no formato 12 horas:</li> 
+            <script type="text/javascript">
+                window.onload = function () {
+                    DisplayCurrentTime();
+                };
+                function DisplayCurrentTime() {
+                    var date = new Date();
+                    var hours = date.getHours() > 12 ? date.getHours() - 12 : date.getHours();
+                    var am_pm = date.getHours() >= 12 ? "PM" : "AM";
+                    hours = hours < 10 ? "0" + hours : hours;
+                    var minutes = date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes();
+                    var seconds = date.getSeconds() < 10 ? "0" + date.getSeconds() : date.getSeconds();
+                    time = hours + ":" + minutes + ":" + seconds + " " + am_pm;
+                    var lblTime = document.getElementById("lblTime");
+                    lblTime.innerHTML = time;
+                };
+            </script>
+            <span id="lblTime"></span>
+
+            <li>Data atual no formato yyyy/mm/dd:
+                <span style="color: blue;"> <script>document.write(data_atual.getFullYear() + "/" +
+                    (data_atual.getMonth()) + "/" + data_atual.getDate() )</script></span>
+            </li>
+            
+            <li>Data atual no formato dd/mm/yyyy:
+            <span style=" color: purple"><script>document.write(data_atual.getDate() + "/" +
+                (data_atual.getMonth()) + "/" + data_atual.getFullYear() )</script></span>
+</li>
+            <li>Quantidade de segundos decorridos hoje:
+
+                <span style="color: red;"><script>document.write(data_atual.getHours() * 3600 + 
+                    data_atual.getMinutes() * 60 + data_atual.getSeconds())</script></span>
+
+            </li>
+        </ul>
+
+
+
+    </body>
+</html>    
+       

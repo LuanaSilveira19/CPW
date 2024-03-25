@@ -1,0 +1,201 @@
+<!--Codifique uma página web contendo os seguintes campos: codigo, nome, idade, 
+    data de nascimento, peso e cidade.
+Essa página deverá ter um botão, que ao ser clicado deverá executar uma função para a validação dos campos.
+O campo codigo deverá ser um valor inteiro pertencente ao intervao de 1 a 1000.
+O campo nome deverá ser conter de 5 a 100 caracteres alfanuméricos.
+O campo idade deverá ser um inteiro entre 1 e 200.
+O Campo de data de nascimento deverá conter uma data inferior a data atual.
+O campo peso deverá ter um valor decimal, com uma casa de precisão.
+O campo cidade deverá possibilitar a escolha de uma cidade, com base numa lista.
+Caso os dados fornecidos estejam corretor, informar uma mensagem de alerta. Caso contrário informar uma mensagem de erro.
+-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Exercício 23 - validação</title>
+    <script src="../../topico_4/js/jquery-3.5.1.min.js"></script>
+</head>
+<style>
+    
+    .box {
+        margin-top: 5%;
+        margin-left: 30%;
+        margin-right: 40%;
+        background: aqua;
+        border: 3px;
+        border-color: black; 
+        border-style: outset;
+        height: 43%;
+    }
+    h1{
+        text-align: center;
+    }
+
+    .formcontrol {
+        margin: 5px;
+    }
+
+    .alinhamento {
+        width: 40%;
+        float: left;
+    }
+</style>
+
+<body>
+   
+    <div class="box">
+        <h1>Formulário</h1>
+    <form class="centro" action="#" method="get">
+
+        <div class="formcontrol">
+            <div class="alinhamento">
+                <label id="dtLabelSoma">Soma:</label>
+            </div>
+
+            <input type="text" id="idSoma">
+        </div>
+
+        <div class="formcontrol">
+            <div class="alinhamento">
+                <label id="dtLabelCodigo">Código:</label>
+            </div>
+
+            <input type="number" id="idCodigo" step="0.1">
+        </div>
+
+        <div class="formcontrol">
+            <div class="alinhamento">
+                <label id="dtLabelNome">Nome:</label>
+            </div>
+
+            <input type="text" id="idNome">
+        </div>
+
+
+        <div class="formcontrol">
+            <div class="alinhamento">
+                <label id="dtLabeCPF">CPF:</label>
+            </div>
+
+            <input type="number" id="idCPF">
+        </div>
+
+
+        <div class="formcontrol">
+            <div class="alinhamento">
+                <label id="dtLabelIdade">Idade:</label>
+            </div>
+
+            <input type="number" id="idIdade">
+        </div>
+
+
+        <div class="formcontrol">
+            <div class="alinhamento">
+                <label id="dtLabelData">Data de nascimento:</label>
+            </div>
+
+            <input type="date" id="idData" name="data"required>
+        </div>
+
+
+        <div class="formcontrol">
+            <div class="alinhamento">
+                <label id="dtLabelCidade">Cidade:</label>
+            </div>
+
+            <select id="idCidade">
+                <option selected disabled>Selecione</option>
+                <option>Carazinho</option>
+                <option>Erechim</option>
+                <option>Marau</option>
+                <option>Soledade</option>
+                <option>Passo Fundo</option>
+            </select>
+        </div>
+
+        <div class="formcontrol">
+            <div class="alinhamento">
+                <input type="submit" id="btnValidar" value="Enviar">
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+
+<script type="text/javascript">
+
+
+    $("#btnValidar").click(function () {
+
+        var codigo = document.getElementById("idCodigo").value;
+        if (codigo < 1 || codigo > 100) {
+            alert("Código inválido!!")
+        }
+        else {
+            alert("Código válido!!")
+        }
+        var nome = document.getElementById("idNome").value;
+
+        if (nome < 3 || nome == " ") {
+            alert("Preencha o nome")
+        }
+        else {
+            alert("Nome válido")
+        }
+        var cpf_in = document.getElementById("idCPF").value;
+        if (cpf_in <11 || cpf_in>11) {
+            alert("O CPF tem que ter 11 digitos")
+        }
+        else {
+            alert("CPF válido")
+        }
+        var idade = document.getElementById("idIdade").value;
+        if (idade < 1) {
+            alert("Idade inválida")
+        }
+        else {
+            alert("Idade válida")
+        }
+        var campo = document.getElementById("idCidade").value;
+        if (campo != "Selecione") {
+            alert("Cidade válida")
+        }
+        else {
+            alert("Selecione a cidade")
+        }
+        var dataof = document.getElementById("idData").value;
+        var data_formulario = new Date(dataof);
+        var data_atual = new Date();
+
+
+
+        if(data_formulario.getTime()>=data_atual.getTime() ) {
+
+            alert("Data inválida")
+        }
+        else {
+            alert("Data válida")
+        }
+    
+
+    })
+    $(document).ready(function () {
+        var n1, n2, soma;
+
+        n1 = prompt("Primeiro");
+        n2 = prompt("Segundo");
+        soma = parseFloat(n1) + parseFloat(n2);
+        
+
+        document.getElementById("idSoma").value = soma;
+        document.getElementById("idSoma").innerHTML
+    })
+    
+
+
+
+</script>
+
+</html>

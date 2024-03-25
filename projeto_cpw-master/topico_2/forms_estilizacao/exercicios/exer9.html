@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Exercicio 9 topico 2 </title>
+    <style>
+        .boxmodel {
+
+            margin: 10px;
+            border: 2px;
+            border-style: dashed;
+            border-color: rgb(0, 10, 115);
+            background: rgb(117, 226, 253);
+
+            padding: 15px;
+
+            color: rgb(4, 79, 178);
+
+            width: 35%;
+            height: 30px;
+
+            float: left;
+        }
+
+        .boxmodel_footer {
+
+            margin: 10px;
+
+            border: 2px;
+            border-style: dashed;
+            border-color: rgb(0, 10, 115);
+            background: rgb(117, 226, 253);
+
+
+            padding: 5px;
+
+            width: 76%;
+            height: auto;
+
+            text-align: center;
+            clear: both;
+        }
+    </style>
+
+
+<body>
+    <h3>Preencha os campos abaixo </h3>
+    <div>
+        <form>
+
+
+            <div class="boxmodel">
+                <label for="password">Insira uma senha: </label><br>
+                <input id="password" type="password"> <br>
+            </div>
+
+            <div class="boxmodel">
+                <label for="email"> Insira seu e-mail:</label><br>
+                <input id="email" type="email"><br>
+            </div>
+
+            <div class="boxmodel">
+                <label for="number"> Procure um número: </label><br>
+                <input id="number" type="number"> <br>
+            </div>
+
+            <div class="boxmodel">
+                <label for="date"> Insira a data de hoje:</label><br>
+                <input id="date" type="date"><br>
+            </div>
+
+            <div class="boxmodel">
+                <label for="lblTelefone"> Insira seu telefone:</label><br>
+                <input id="telefone" type="text" name="telefone" size="10">
+            </div>
+
+            <div class="boxmodel">
+                <label for="range"> Mova:</label><br>
+                <input id="range" type="range"><br>
+            </div>
+
+
+            <div class="boxmodel">
+                <label for="file"> Selecione um arquivo:</label><br>
+                <input id="file" type="file"><br>
+            </div>
+
+            <div class="boxmodel">
+                <label for="image"> Insira uma imagem:</label><br>
+                <input id="image" type="image"><br>
+            </div>
+
+            <div class="boxmodel">
+                <label for="datetime-local"> Insira a data de hoje:</label><br>
+                <input id="datetime-local" type="datetime-local"><br>
+            </div>
+            <div class="boxmodel">
+                <label for="week"> Preencha:</label><br>
+                <input id="week" type="week"><br>
+            </div>
+
+            <div class="boxmodel_footer">
+
+                <button type="button" onclick="Evento()">Enviar</button>
+            </div>
+
+            <script>
+                function Evento() {
+                    alert('Enviado com sucesso')
+                }
+            </script>
+
+    </div>
+    </form>
+
+
+    </div>
+
+
+
+</body>
+
+
+
+
+
+</head>
+<!--9) Códifique uma página em HTML contendo cabeçalho, corpo e rodapé. 
+        No cabeçalho defina um título. No corpo um formulário que deverá ter 
+        no mínimo dez campos para preenchimento (text, checkbox, select, etc.) agrupados em dois blocos (lado a lado).
+        Na parte inferior, deverá ter um botão (Enviar), que ao ser clicado deverá exibir uma mensagem.        
+        Para a estilização, organize os estilos em classes, armazenadas no arquivo ../css/estilos.css.
+
+        Com base no conceito de boxmodel, cada bloco deve ocupar 35% da largura disponível da página.
+        Margem de 10px. Altura variável, borda pontilhada de 1px de cor azul forte e cor de fundo azul claro. 
+        Os dois blocos devem estar na mesma altura (float: left)
+
+        Para as divs localizadas dentros dos blocos, margem de 5px, espaçamento  entre a borda e o conteúdo de 5px, 
+        altura e largura variável. Não aplique cor de fundo.
+        
+        O botão de enviar deve estar localizado abaixo dos dois blocos (segunda linha, em novo fluxo. portanto, "clear: both"), 
+        ocupando toda a largura da página e centralizado.
+    -->
+
+</html>

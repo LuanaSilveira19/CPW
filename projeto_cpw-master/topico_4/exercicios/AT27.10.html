@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        .dados {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+        }
+
+        .campos {
+            display: flex;
+            flex-direction: column;
+            width: 20%;
+            background-color: aqua;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="dados">
+        <div>
+            <label for="email">E-mail:</label>
+            <input id="email" type="email" placeholder="E-mail">
+        </div>
+  
+        <div>
+            <label for="senha">Senha:</label>
+            <input id="senha" type="password" placeholder="senha">
+        </div>
+
+        <div class="campos botao">
+            <button type="button" onclick="Evento()">Acessar</button>
+         <script>
+            function Evento(){
+                alert('Acesso permitido')
+            }
+         </script>
+        </div>
+    </div>
+
+</body>
+
+</html>

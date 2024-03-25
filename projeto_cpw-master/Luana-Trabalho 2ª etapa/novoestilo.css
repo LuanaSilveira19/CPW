@@ -1,0 +1,111 @@
+body{
+    background-color: #F0F8FF;
+}
+
+.caixa{
+    background-color: #9583B6;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 0px;
+}
+.paragrafo{
+    text-align: justify;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 17px;
+}
+.conteudo{
+    display: flex;
+
+}
+.formcontrol{
+    margin: 15px;
+ }
+ .form {
+ text-align: center;
+ color:  #572975;
+
+}
+
+.menu{
+    padding: 0;
+    background-color:  #BDB6E2;
+    display: flex;
+  
+    justify-content: space-evenly;
+}
+.menu li{
+    list-style: none;
+    display: inline-block;
+    
+}
+.menu a{
+    
+    display: block;
+    color: #65337A;
+    text-decoration: none;
+    padding: 16px;
+}
+.menu a:hover{
+    background-color: #9583B6;
+    color: white;
+}
+.topo{
+    width:100%;
+}
+#home{            
+    width:134%;
+}
+#menu1{            
+    width:134%;
+    text-align: center;
+}
+#menu2{            
+    width:134%;
+    text-align: center;
+}
+#menu3{            
+    width:134%;
+    text-align: center;
+}
+#menu4{            
+    width:134%;
+    text-align: justify;
+}
+h3{
+    color:  #572975;
+    text-align: center;
+}
+h2{
+    color:  #572975;
+}
+.img{
+    text-align: center;
+}
+.dados li{
+    list-style: none;
+    text-align: justify;
+}
+.formcontrol.success input{
+    border: 2px solid #4ECA64;
+}
+.formcontrol.success textarea{
+    border: 2px solid #4ECA64;
+}
+.formcontrol.error input{
+    border: 2px solid #DB5A5A; 
+}
+
+.formcontrol.error textarea{
+    border: 2px solid #DB5A5A; 
+}
+.formcontrol small{
+position: absolute;
+margin-top: 5px;
+visibility: hidden;
+font-size: 14px;
+}
+.formcontrol.error small{
+    visibility: visible;
+    color: #DB5A5A;
+}
